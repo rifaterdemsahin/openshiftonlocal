@@ -4,8 +4,9 @@ function Add-ToHistory {
         [string]$Command
     )
 
-    # Add the command to history without executing it
-    Add-History -CommandLine $Command
+    # Add the command to history using New-HistoryItem and Add-History
+    $historyItem = New-HistoryItem -CommandLine $Command
+    Add-History -InputObject $historyItem
 }
 
 # List of common OpenShift commands
