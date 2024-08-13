@@ -1,13 +1,3 @@
-# Function to add a command to the PowerShell history
-function Add-ToHistory {
-    param (
-        [string]$Command
-    )
-
-    # Add the command to history using Add-History
-    Add-History -CommandLine $Command
-}
-
 # List of common OpenShift commands
 $openshiftCommands = @(
     "oc login https://your-openshift-cluster --token=your-token",    # Login to OpenShift
@@ -28,9 +18,9 @@ $openshiftCommands = @(
     "oc delete -f your-file.yaml"                                    # Delete resources defined in a YAML file
 )
 
-# Iterate over the OpenShift commands and add them to history
+# Iterate over the OpenShift commands and execute them to add them to history
 foreach ($cmd in $openshiftCommands) {
-    Add-ToHistory -Command $cmd
+    Invoke-Expression $cmd
 }
 
 Write-Host "OpenShift commands have been added to your PowerShell history."
