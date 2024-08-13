@@ -4,9 +4,8 @@ function Add-ToHistory {
         [string]$Command
     )
 
-    # Add the command to history using New-HistoryItem and Add-History
-    $historyItem = New-HistoryItem -CommandLine $Command
-    Add-History -InputObject $historyItem
+    # Add the command to history using Add-History
+    Add-History -CommandLine $Command
 }
 
 # List of common OpenShift commands
