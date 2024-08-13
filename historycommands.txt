@@ -3,3 +3,5 @@ wsl --list --verbose
 powershell dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All
 .\crc-windows-amd64.exe setup
 .\crc-windows-amd64.exe start
+
+PS C:\Windows\system32> cd "C:\Program Files\Red Hat OpenShift Local"
